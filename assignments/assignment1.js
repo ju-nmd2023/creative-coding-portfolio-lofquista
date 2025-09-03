@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-  background(100, 200, 239);
+  background(255);
   noStroke();
   noFill();
 
@@ -24,12 +24,14 @@ for (let i=0; i < Yamount; i++) {
     translate(x, y);
 
   stroke(0);
-      strokeWeight(1);
-      
-      // rect(0, 0, size, size);
+  strokeWeight(1.2);
+
+  // The next line was retreived from https://p5js.org/reference/p5/strokeJoin/
+      strokeJoin(ROUND);
+
 
       beginShape();
-      for (let s = 0; s < 9; s++) {
+      for (let s = 0; s < 10; s++) {
         vertex(random(0, size), random(0, size));
       }
       endShape();
