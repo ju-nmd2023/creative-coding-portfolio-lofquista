@@ -1,44 +1,22 @@
-const size = 30;
-const gap = 5;
-const Yamount = 12;
-const Xamount = 12;
-
-
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    frameRate(3);
+    background(255);
 }
+
+let x = width / 2;
+let y = height / 4;
 
 function draw() {
-  background(100, 200, 239);
-  noStroke();
-  noFill();
-
-let y = (height - size * Yamount - gap * (Yamount - 1)) / 2;
+    stroke(0);
+    strokeWeight(8);
+    noFill();
 
 
-for (let i=0; i < Yamount; i++) {
-  let x = (width - size * Xamount - gap * (Xamount - 1)) / 2;
-
-  for (let k=0; k < Xamount; k++) {
-    push();
-    translate(x, y);
-
-    stroke(225 * Math.random(), 0, 125);
-
-  strokeWeight(1.2);
-
-
-      beginShape();
-      for (let s = 0; s < 45; s++) {
-        vertex(random(0, size), random(0, size));
-      }
-      endShape();
-      
-  pop(); 
-
-  x += size + gap;
-}
-y += size + gap;
-}
-}
+   for (let i = 0; i < 20; i++) {
+        stroke(255 * Math.random(), 0, 0);
+        strokeWeight(20 * Math.random());
+    let y = height / 4 + i * 20; 
+    arc(x, y, 350 * Math.random(), 30, 0, PI + HALF_PI);
+  }
+      noLoop();
+    }

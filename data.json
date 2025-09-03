@@ -5,14 +5,19 @@
     "description": "An attempt to somewhat recreate an artwork made by Georg Nees where there is a grid of squares, and within each square there are random points with a line between them."
   },
   {
-    "file": "assignments/assignment1-ver2.js",
+    "file": "assignments/assignment1-ver1.2.js",
     "name": "Week 1: Squares of scribbles 2.0",
     "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
   },
 
   {
-    "file": "assignments/assignment1-ver3.js",
-    "name": "Week 1: Squares of scribbles 3.0",
+    "file": "assignments/assignment1-ver2.js",
+    "name": "Week 1: ",
+    "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
+  },
+  {
+    "file": "assignments/assignment1-ver2.2.js",
+    "name": "Week 1: ",
     "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
   }
 ]
