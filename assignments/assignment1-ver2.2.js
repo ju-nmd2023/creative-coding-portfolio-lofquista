@@ -1,44 +1,47 @@
-const Xsize = 20;
-const Ysize = 80;
-const gap = 15;
-const Yamount = 4;
-const Xamount = 18;
-
-
 function setup() {
     createCanvas(innerWidth, innerHeight);
+    background(255,235,220);
 }
+
+const totalArcs = 25;
+const gap = 15;
+
 
 function draw() {
-  background(255);
-  noStroke();
-  noFill();
+    stroke(0);
+    strokeWeight(8);
+    noFill();
 
-let y = (height - Ysize * Yamount - gap * (Yamount - 1)) / 2;
+push();
+translate(width / 2, height / 2);
+rotate(10);
+translate(-width / 2, -height / 2);
 
+   for (let i = 0; i < totalArcs; i++) {
+        stroke(255, 140 * Math.random(), 0);
+        strokeWeight(18 * Math.random());
 
-for (let i=0; i < Yamount; i++) {
-  let x = (width - Xsize * Xamount - gap * (Xamount - 1)) / 2;
+        //The next two lines are retreived from ChatGPT https://chatgpt.com/share/68b8728a-8948-8002-953f-2e164ed9e63d and https://chatgpt.com/share/68b88335-49e8-8002-9218-8d4ef47d2c53
+    let y = height / 2 + (i - totalArcs/2) * gap + random(-10, 10); 
+   let arcWidth = 450 - Math.abs(i - totalArcs/2) / (totalArcs/2) * 350 + random(-20, 50);
+    arc(width/2, y, arcWidth, 50, 5, PI + HALF_PI);
+  }
+  pop();
+  push();
+translate(width / 2, height / 2);
+rotate(10);
+translate(-width / 2, -height / 2);
 
-  for (let k=0; k < Xamount; k++) {
-    push();
-    translate(x, y);
+   for (let i = 0; i < totalArcs; i++) {
+        stroke(135 * Math.random(), 175 , 255);
+       strokeWeight(10 * Math.random());
 
-  stroke(74, 125, 65);
-  strokeWeight(1);
-
-
-      beginShape();
-      for (let s = 0; s < 12; s++) {
-        vertex(random(0, Xsize), random(0, Ysize));
-      }
-      endShape();
-      
-  pop(); 
-
-  x += Xsize + gap;
-}
-y += Ysize + gap;
-}
-noLoop();
-}
+        //The next two lines are retreived from ChatGPT https://chatgpt.com/share/68b8728a-8948-8002-953f-2e164ed9e63d and https://chatgpt.com/share/68b88335-49e8-8002-9218-8d4ef47d2c53
+    let y = height / 2 + (i - totalArcs/2) * gap + random(-10, 10); 
+   let arcWidth = 450 - Math.abs(i - totalArcs/2) / (totalArcs/2) * 350 + random(-50, 20);
+    arc(width/2, y, arcWidth, 50, 6, PI + HALF_PI);
+  }
+  pop();
+  
+      noLoop();
+    }
