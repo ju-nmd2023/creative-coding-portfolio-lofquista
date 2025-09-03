@@ -12,12 +12,12 @@
 
   {
     "file": "assignments/assignment1-ver2.js",
-    "name": "Week 1: ",
-    "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
+    "name": "Week 1: A whirl of colors ",
+    "description": "An interpretation of an artwork made by Marius Watz. Made while trying to learn how to use arcs and randomness within loops."
   },
   {
     "file": "assignments/assignment1-ver2.2.js",
-    "name": "Week 1: ",
+    "name": "Week 1: A whirl of colors 2.0",
     "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
   }
 ]
