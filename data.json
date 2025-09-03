@@ -2,12 +2,12 @@
   {
     "file": "assignments/assignment1-ver1.js",
     "name": "Week 1: Squares of scribbles",
-    "description": "An attempt to somewhat recreate an artwork made by Georg Ness where there is a grid of squares, and within each square there are random points with a line between them."
+    "description": "An attempt to somewhat recreate an artwork made by Georg Nees where there is a grid of squares, and within each square there are random points with a line between them."
   },
   {
-    "file": "assignments/assignment2.js",
-    "name": "Name of your experiment",
-    "description": "Explains the what and the why. What is the main idea? What is the purpose? Describes the coding process and implementation choices and gives a high level system overview."
+    "file": "assignments/assignment1-ver2.js",
+    "name": "Week 1: Squares of scribbles 2.0",
+    "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
   }
   
 ]
