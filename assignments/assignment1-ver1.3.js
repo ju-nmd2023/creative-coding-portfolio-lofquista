@@ -33,7 +33,7 @@ for (let i=0; i < Yamount; i++) {
       beginShape();
       for (let s = 0; s < 12; s++) {
         vertex(random(0, Xsize), random(0, Ysize));
-        ellipse(4, 0, ellipseSize);
+        ellipse(10, 0, ellipseSize);
       }
       endShape();
       
