@@ -8,6 +8,7 @@ const ellipseSize = 20;
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
+    frameRate(3);
 }
 
 function draw() {
@@ -42,5 +43,4 @@ for (let i=0; i < Yamount; i++) {
 }
 y += Ysize + gap;
 }
-noLoop();
 }
