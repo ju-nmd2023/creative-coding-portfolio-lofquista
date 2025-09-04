@@ -8,7 +8,6 @@ const gap = 25;
 
 
 function draw() {
-
     noFill();
 
 push();
