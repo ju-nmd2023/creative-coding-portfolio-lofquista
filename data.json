@@ -12,7 +12,7 @@
   {
     "file": "assignments/assignment1-ver1.3.js",
     "name": "Week 1: Squares of scribbles 3.0",
-    "description": "A version of my recreation of an artwork made by Georg Nees. Some values are changed, and the color, and some creative freedom is taken to make it look like abstract little humans dancing."
+    "description": "A version of my recreation of an artwork made by Georg Nees. I changed some values and the color, and I also took some creative freedom to make it look like abstract little humans dancing."
   },
 
   {
@@ -23,6 +23,6 @@
   {
     "file": "assignments/assignment1-ver2.2.js",
     "name": "Week 1: A whirl of colors 2.0",
-    "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
+    "description": "A version of my interpretation of an artwork made by Marius Watz. This time I played around even more with the randomness and the colors to give it a different feel even though the base is the same."
   }
 ]
