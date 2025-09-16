@@ -9,8 +9,8 @@ class Particle {
     this.angle = a;
 
       this.length = 20 + random(200); 
-    this.width1 = random(-20, 40); 
-    this.width2 = random(50, 100); 
+    this.width1 = random(-40, 40); 
+    this.width2 = random(10, 100); 
   }
 
   update() {
