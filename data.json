@@ -36,5 +36,11 @@
     "file": "assignments/assignment2-ver2.js",
     "name": "Week 2: Simple rays",
     "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
+  },
+
+  {
+    "file": "assignments/assignment2-ver2.2.js",
+    "name": "Week 2: Simple rays",
+    "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
   }
 ]
