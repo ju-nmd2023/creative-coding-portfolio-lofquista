@@ -4,7 +4,6 @@ class Particle {
     const a = Math.random() * Math.PI * 2;
     const v = 0.8 + Math.random();
     this.velocity = createVector(Math.cos(a) * v, Math.sin(a) * v);
-    // this.lifespan = 200 + Math.random() * 200;
 
     // The next line was retreived from Claude
     this.angle = a;
@@ -16,8 +15,6 @@ class Particle {
   }
 
   update() {
-    // this.lifespan--;
-
     this.velocity.mult(1.1);
     this.position.add(this.velocity);
   }
@@ -43,19 +40,34 @@ function setup() {
 frameRate(10);
 }
 
+
 function generateParticles(x, y) {
-  for (let i = 0; i < 20; i++) {
-    const px = x + random(-10, 10);
-    const py = y + random(-10, 10);
-    const particle = new Particle(px, py);
-    particles.push(particle);
-  }
+    for (let i = 0; i < 5; i++) {
+        const px = x + random(-10, 10);
+        const py = y + random(-10, 10);
+        const particle = new Particle(px, py);
+        particles.push(particle);
+    }
 }
 
 let particles = [];
 
+// The flowingParticles parts was inspired by ChatGPT https://chatgpt.com/share/68c98847-a08c-8002-95f5-7b56b222b744
+let flowingParticles = false;
+
 function draw() {
   background(0);
+
+  if (flowingParticles) {
+    generateParticles(mouseX, mouseY);
+     textSize(20);
+    fill(255);
+    text("Click to stop", 20, 30);
+  } else {
+    textSize(20);
+    fill(255);
+    text("Click to start", 20, 30);
+  }
 
   for (let particle of particles) {
     particle.update();
@@ -64,5 +76,5 @@ function draw() {
 }
 
 function mouseClicked() {
-  generateParticles(mouseX, mouseY);
+    flowingParticles = !flowingParticles;
 }
