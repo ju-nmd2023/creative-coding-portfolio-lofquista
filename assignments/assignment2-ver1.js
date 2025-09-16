@@ -1,89 +1,78 @@
-// let position;
-// let velocity;
-// let acceleration;
+class Particle {
+  constructor(x, y) {
+    this.position = createVector(x, y);
+    const a = Math.random() * Math.PI * 2;
+    const v = 0.2 + Math.random();
+    this.velocity = createVector(Math.cos(a) * v, Math.sin(a) * v);
 
-// function setup() {
-//     createCanvas(innerWidth, innerHeight);
-//     position = createVector(200, 200);
-//         velocity = createVector(5, 8);
-//         background(0);
-// frameRate(20);
-// }
+// The next line was inspired by ChatGPT https://chatgpt.com/share/68c98d11-bb7c-8002-a0bc-de6c9eb88d87
+    this.angle = a;
 
-// function draw() {
-//     // noStroke();
+      this.length = 20 + random(200); 
+    this.width1 = random(-20, 40); 
+    this.width2 = random(50, 100); 
+  }
 
-//     push();
-//     // fill(15, random(200), 255);
-//     stroke(200, 100, random(255));
-//     strokeWeight(20);
-// line(position.x, position.y, 80, 20, 0);
-//     pop();
+  update() {
+    this.velocity.mult(1.1);
+    this.position.add(this.velocity);
+  }
 
-// // push();
-// // fill(55, random(255), 200);
-// // ellipse(position.x, height - position.y, random(10));
-// // ellipse(width - position.x, position.y, random(10));
-// // pop();
+  draw() {
+    push();
+    translate(this.position.x, this.position.y);
 
-// // if (position.x > width || position.x < 0) {
-// // velocity.x *= -1;
-// // }
+// The next line was inspired by ChatGPT https://chatgpt.com/share/68c98d11-bb7c-8002-a0bc-de6c9eb88d87
+ rotate(this.angle);
 
-// // if (position.y > height || position.y < 0) {
-// // velocity.y *= -1;
-// // }
+    noStroke();
+    fill(random(255), random(255), random(0));
+    triangle(0, this.width1, 0, this.width2, this.length, 0);
 
-// const mouse = createVector(mouseX, mouseY);
-// acceleration = p5.Vector.sub(mouse, position);
-// acceleration.normalize();
-// acceleration.mult(0.5);
+    pop();
+  }
 
-// velocity.add(acceleration);
-// velocity.limit(10);
-//     position.add(velocity);
-
-
-// // noLoop();
-// }
-
-
-// OTHER TEST
-
-let position;
-let velocity;
-let acceleration;
+}
 
 function setup() {
-    createCanvas(innerWidth, innerHeight);
-    // position = createVector(200, 200);
-    // velocity = createVector(5, 8);
-    background(255);
+  createCanvas(innerWidth, innerHeight);
+frameRate(10);
 }
 
-function draw() {
-    // Draw function can be empty since we're only drawing on clicks
-}
 
-function mousePressed() {
-    // Create explosion of multiple lines at click location
-    let numLines = random(15, 25); // Random number of lines per click
-    
-    for (let i = 0; i < numLines; i++) {
-        push();
-        stroke(200, 100, random(255));
-        strokeWeight(random(1, 8));
-        
-        // Create lines radiating outward from click point
-        let angle = random(TWO_PI);
-        let length = random(20, 80);
-        let endX = mouseX + cos(angle) * length;
-        let endY = mouseY + sin(angle) * length;
-        
-        line(mouseX, mouseY, endX, endY);
-        pop();
+function generateParticles(x, y) {
+    for (let i = 0; i < 5; i++) {
+        const px = x + random(-10, 10);
+        const py = y + random(-10, 10);
+        const particle = new Particle(px, py);
+        particles.push(particle);
     }
 }
 
+let particles = [];
 
+// The flowingParticles part was inspired by ChatGPT https://chatgpt.com/share/68c98847-a08c-8002-95f5-7b56b222b744
+let flowingParticles = false;
 
+function draw() {
+  background(0);
+
+  if (flowingParticles) {
+    generateParticles(mouseX, mouseY);
+  } 
+  else {
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    fill(255);
+    text("Click to start and stop", width / 2, height / 2);
+  }
+
+  for (let particle of particles) {
+    particle.update();
+    particle.draw();
+  }
+}
+
+function mouseClicked() {
+    flowingParticles = !flowingParticles;
+}

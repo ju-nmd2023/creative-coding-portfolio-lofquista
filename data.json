@@ -24,5 +24,11 @@
     "file": "assignments/assignment1-ver2.2.js",
     "name": "Week 1: A whirl of colors 2.0",
     "description": "A version of my interpretation of an artwork made by Marius Watz. This time I played around even more with the randomness and the colors to give it a different feel even though the base is the same."
+  },
+
+  {
+    "file": "assignments/assignment2-ver1.js",
+    "name": "Week 2: ...",
+    "description": "A version of my interpretation of an artwork made by Marius Watz. This time I played around even more with the randomness and the colors to give it a different feel even though the base is the same."
   }
 ]
