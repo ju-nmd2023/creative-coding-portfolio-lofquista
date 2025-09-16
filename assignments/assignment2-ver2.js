@@ -7,7 +7,7 @@ let startLines = false;
 function setup() {
     createCanvas(innerWidth, innerHeight);
         background(0);
-frameRate(20);
+frameRate(30);
 }
 
 

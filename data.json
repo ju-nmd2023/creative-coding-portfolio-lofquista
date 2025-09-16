@@ -30,5 +30,11 @@
     "file": "assignments/assignment2-ver1.js",
     "name": "Week 2: Follow the paper airplanes",
     "description": "An interactive interpretation of an artwork made by Marius Watz. By combining particles and randomness, we get this chaotic flight of colorful paper airplanes that is like a simplification of an explosion."
+  },
+
+  {
+    "file": "assignments/assignment2-ver2.js",
+    "name": "Week 2: Simple rays",
+    "description": "Another interactive interpretation of an artwork made by Marius Watz. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
   }
 ]
