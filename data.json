@@ -33,6 +33,12 @@
   },
 
   {
+    "file": "assignments/assignment2-ver1.2.js",
+    "name": "Week 2: Follow the paper airplanes 2.0",
+    "description": "Another version of my interpretation of an artwork made by Marius Watz. This time I added some flow field function to the particles and randomness, creating more of a confetti simulation."
+  },
+
+  {
     "file": "assignments/assignment2-ver2.js",
     "name": "Week 2: Simple rays",
     "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
