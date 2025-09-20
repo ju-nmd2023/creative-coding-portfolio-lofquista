@@ -5,7 +5,7 @@ class Particle {
     const v = 0.8 + Math.random();
     this.velocity = createVector(Math.cos(a) * v, Math.sin(a) * v);
 
-    // The enxt line of code was retreived from Claude https://claude.ai/share/73b53e1c-bf6e-46ff-8b67-155017b48720
+    // The next line of code was retreived from Claude https://claude.ai/share/73b53e1c-bf6e-46ff-8b67-155017b48720
     this.angle = Math.atan2(this.velocity.y, this.velocity.x);
 
   
@@ -18,7 +18,7 @@ update() {
     this.velocity.mult(1.02);
     this.position.add(this.velocity);
 
-    // The enxt line of code was retreived from Claude https://claude.ai/share/73b53e1c-bf6e-46ff-8b67-155017b48720
+    // The next line of code was retreived from Claude https://claude.ai/share/73b53e1c-bf6e-46ff-8b67-155017b48720
     this.angle = Math.atan2(this.velocity.y, this.velocity.x);
     
  
@@ -54,7 +54,7 @@ update() {
 function flowForce(x, y) {
     const scale = 0.1;
     const strength = 1;
-    const angle = noise(x * scale, y * scale) * TWO_PI * 2;
+    const angle = noise(x * scale, y * scale) * TWO_PI;
     return createVector(cos(angle) * strength, sin(angle) * strength);
 }
 
@@ -84,16 +84,8 @@ let particles = [];
 
 
 function draw() {
-
-
-
   for (let particle of particles) {
     particle.update();
     particle.draw();
   }
 }
-
-
-
-
-// Claude länk: https://claude.ai/share/73b53e1c-bf6e-46ff-8b67-155017b48720
