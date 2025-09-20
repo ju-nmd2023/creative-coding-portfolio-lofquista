@@ -37,6 +37,8 @@ velocity.limit(10);
 
 function mouseClicked() {
     push();
-    strokeWeight(random(50));
+    strokeWeight(random(200));
     pop();
 }
+
+
