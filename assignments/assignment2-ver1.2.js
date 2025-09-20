@@ -24,6 +24,8 @@ update() {
  
     if (this.position.x <= 0 || this.position.x >= width) {
       this.velocity.x *= -1;
+
+      // Constrain function learned from p5.js https://p5js.org/reference/p5/constrain/
       this.position.x = constrain(this.position.x, 0, width);
 
     }
