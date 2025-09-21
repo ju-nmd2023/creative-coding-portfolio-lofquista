@@ -41,12 +41,12 @@
   {
     "file": "assignments/assignment2-ver1.3.js",
     "name": "Week 2: Follow the paper airplanes 3.0",
-    "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
+    "description": "A third version of my interpretation of an artwork made by Marius Watz, but now the paper airplanes have exploded or turned into UFOs. By working with particles and changed conditions when they hit the walls, a completely different artwork is made, even though the code is very similar."
   },
 
   {
     "file": "assignments/assignment2-ver2.js",
-    "name": "Week 2: Simple rays",
+    "name": "Week 2 (bonus): Simple rays",
     "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
   }
 ]
