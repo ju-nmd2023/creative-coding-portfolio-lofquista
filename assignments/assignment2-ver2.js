@@ -16,7 +16,7 @@ function drawLines() {
     stroke(255, 255, 255);
     strokeWeight(1);
 line(startPoint.x, startPoint.y, position.x, position.y);
-    pop();
+pop();
 }
 
 
