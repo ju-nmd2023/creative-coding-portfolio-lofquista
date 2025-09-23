@@ -18,27 +18,27 @@ function draw() {
 
   push();
   fill(0);
-  rect(width / 2 - 75, 20, 150, 85);
+  rect(width / 2 - 75, 85, 150, 85);
   pop();
 
   push();
   fill(255, 20, 147);
-  ellipse(width / 2 - 35, 45, 25, 25);
+  ellipse(width / 2 - 35, 110, 25, 25);
 
   fill(0, 255, 255);
-  ellipse(width / 2 - 35, 80, 25, 25);
+  ellipse(width / 2 - 35, 145, 25, 25);
 
   fill(255, 215, 0);
-  ellipse(width / 2, 80, 25, 25);
+  ellipse(width / 2, 145, 25, 25);
 
   fill(138, 43, 226);
-  ellipse(width / 2 + 35, 45, 25, 25);
+  ellipse(width / 2 + 35, 110, 25, 25);
 
   fill(50, 205, 50);
-  ellipse(width / 2 + 35, 80, 25, 25);
+  ellipse(width / 2 + 35, 145, 25, 25);
 
   fill(255, 69, 0);
-  ellipse(width / 2, 45, 25, 25);
+  ellipse(width / 2, 110, 25, 25);
   pop();
   
   noStroke();
