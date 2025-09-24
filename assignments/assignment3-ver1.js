@@ -10,7 +10,7 @@ const ellipseSize = 20;
 let synth;
 
 let dance = false;
-
+let danceTimer = 0;
 
 window.addEventListener("load", () => {
   synth = new Tone.PolySynth().toDestination();
@@ -57,8 +57,13 @@ function draw() {
   noStroke();
   noFill();
 
+  // // Code retreived from Claude https://claude.ai/public/artifacts/d840efde-4cd0-4492-8984-28ab1d25c7bc
   // if (dance) {
-
+  //   danceTimer++;
+  //   if (danceTimer >= danceDuration) {
+  //     dance = false;
+  //     danceTimer = 0;
+  //   }
   // }
 
 let y = (height - Ysize * Yamount - gap * (Yamount - 1)) / 2;
@@ -75,16 +80,17 @@ for (let i=0; i < Yamount; i++) {
   strokeWeight(1);
 
 
+          ellipse(10, 0, ellipseSize);
+
+
       beginShape();
       for (let s = 0; s < 12; s++) {
 
         if (dance) {
 
           vertex(random(0, Xsize), random(0, Ysize));
-          ellipse(10, 0, ellipseSize);
         } else {
           vertex(Xsize / 2, Ysize / 2);
-          ellipse(10, 0, ellipseSize);
         }
 
       }
@@ -98,45 +104,40 @@ y += Ysize + gap;
 }
 }
 
+
 function mousePressed() {
+  let note = null;
 
   if (dist(mouseX, mouseY, width / 2 - 35, 110) < 12.5) {
-    synth.triggerAttackRelease("C4", "4n");
-    musicClicked = true;
+    note = "C4";
+  } 
+  else if (dist(mouseX, mouseY, width / 2 - 35, 145) < 12.5) {
+    note = "F4";
   }
-
-   else if (dist(mouseX, mouseY, width / 2 - 35, 145) < 12.5) {
-    synth.triggerAttackRelease("F4", "4n");
-    musicClicked = true;
-
-  }
-
   else if (dist(mouseX, mouseY, width / 2, 145) < 12.5) {
-    synth.triggerAttackRelease("G4", "4n");
-    musicClicked = true;
-
+    note = "G4"; 
   }
-
   else if (dist(mouseX, mouseY, width / 2 + 35, 110) < 12.5) {
-    synth.triggerAttackRelease("E4", "4n");
-    musicClicked = true;
-
+    note = "E4";
   }
-
   else if (dist(mouseX, mouseY, width / 2 + 35, 145) < 12.5) {
-    synth.triggerAttackRelease("A4", "4n");
-    musicClicked = true;
-
+    note = "A4";
   }
-
   else if (dist(mouseX, mouseY, width / 2, 110) < 12.5) {
-    synth.triggerAttackRelease("D4", "4n");
-    musicClicked = true;
-
+    note = "D4";
   }
 
-if (musicClicked) {
-  dance = true;
-} 
+  if (note) {
+    synth.triggerAttackRelease(note, "4n");
+    
+    dance = true;
 
+    if (danceTimer) {
+      clearTimeout(danceTimer);
+    }
+
+    danceTimer = setTimeout(() => {
+      dance = false;
+    }, 1000);
+  }
 }
