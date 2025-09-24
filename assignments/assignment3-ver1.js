@@ -9,6 +9,9 @@ const ellipseSize = 20;
 
 let synth;
 
+let dance = false;
+
+
 window.addEventListener("load", () => {
   synth = new Tone.PolySynth().toDestination();
 });
@@ -54,6 +57,10 @@ function draw() {
   noStroke();
   noFill();
 
+  // if (dance) {
+
+  // }
+
 let y = (height - Ysize * Yamount - gap * (Yamount - 1)) / 2;
 
 
@@ -70,8 +77,16 @@ for (let i=0; i < Yamount; i++) {
 
       beginShape();
       for (let s = 0; s < 12; s++) {
-        vertex(random(0, Xsize), random(0, Ysize));
-        ellipse(10, 0, ellipseSize);
+
+        if (dance) {
+
+          vertex(random(0, Xsize), random(0, Ysize));
+          ellipse(10, 0, ellipseSize);
+        } else {
+          vertex(Xsize / 2, Ysize / 2);
+          ellipse(10, 0, ellipseSize);
+        }
+
       }
       endShape();
       
@@ -87,26 +102,41 @@ function mousePressed() {
 
   if (dist(mouseX, mouseY, width / 2 - 35, 110) < 12.5) {
     synth.triggerAttackRelease("C4", "4n");
+    musicClicked = true;
   }
 
    else if (dist(mouseX, mouseY, width / 2 - 35, 145) < 12.5) {
     synth.triggerAttackRelease("F4", "4n");
+    musicClicked = true;
+
   }
 
   else if (dist(mouseX, mouseY, width / 2, 145) < 12.5) {
     synth.triggerAttackRelease("G4", "4n");
+    musicClicked = true;
+
   }
 
   else if (dist(mouseX, mouseY, width / 2 + 35, 110) < 12.5) {
     synth.triggerAttackRelease("E4", "4n");
+    musicClicked = true;
+
   }
 
   else if (dist(mouseX, mouseY, width / 2 + 35, 145) < 12.5) {
     synth.triggerAttackRelease("A4", "4n");
+    musicClicked = true;
+
   }
 
   else if (dist(mouseX, mouseY, width / 2, 110) < 12.5) {
     synth.triggerAttackRelease("D4", "4n");
+    musicClicked = true;
+
   }
+
+if (musicClicked) {
+  dance = true;
+} 
 
 }
