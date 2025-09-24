@@ -26,9 +26,48 @@ function setup() {
     frameRate(3);
 }
 
+function drawDanceFloor() {
+noStroke();
+  noFill();
+
+  if (dance) {
+
+    let y = (height - Ysize * Yamount - gap * (Yamount - 1)) / 2;
+    for (let i=0; i < Yamount; i++) {
+      let x = (width - Xsize * Xamount - gap * (Xamount - 1)) / 2;
+      
+      for (let k=0; k < Xamount; k++) {
+        push();
+        translate(x, y);
+        
+        stroke(74, 125, 65);
+        strokeWeight(1);
+        ellipse(10, 0, ellipseSize);
+        
+        beginShape();
+
+        for (let s = 0; s < 12; s++) {
+          if (dance) {
+            vertex(random(0, Xsize), random(0, Ysize));
+          } else {
+            vertex(Xsize / 2, Ysize / 2); 
+          }   
+        }
+        endShape();
+        
+        pop(); 
+        
+        x += Xsize + gap;
+      }
+      y += Ysize + gap;
+    }
+  }
+}
+
 function draw() {
   background(255);
 
+  // DJ table
   push();
   fill(0);
   rect(width / 2 - 75, 85, 150, 85);
@@ -53,56 +92,15 @@ function draw() {
   fill(255, 69, 0);
   ellipse(width / 2, 110, 25, 25);
   pop();
-  
-  noStroke();
-  noFill();
 
-  // // Code retreived from Claude https://claude.ai/public/artifacts/d840efde-4cd0-4492-8984-28ab1d25c7bc
-  // if (dance) {
-  //   danceTimer++;
-  //   if (danceTimer >= danceDuration) {
-  //     dance = false;
-  //     danceTimer = 0;
-  //   }
-  // }
-
-let y = (height - Ysize * Yamount - gap * (Yamount - 1)) / 2;
-
-
-for (let i=0; i < Yamount; i++) {
-  let x = (width - Xsize * Xamount - gap * (Xamount - 1)) / 2;
-
-  for (let k=0; k < Xamount; k++) {
-    push();
-    translate(x, y);
-
-  stroke(74, 125, 65);
-  strokeWeight(1);
-
-
-          ellipse(10, 0, ellipseSize);
-
-
-      beginShape();
-      for (let s = 0; s < 12; s++) {
-
-        if (dance) {
-
-          vertex(random(0, Xsize), random(0, Ysize));
-        } else {
-          vertex(Xsize / 2, Ysize / 2);
-        }
-
-      }
-      endShape();
-      
-  pop(); 
-
-  x += Xsize + gap;
-}
-y += Ysize + gap;
-}
-}
+  if (dance) {
+    drawDanceFloor();
+  } else {
+    textSize(20);
+    text("Play music to start a dance floor", width / 2, height / 2);
+    textAlign(CENTER);
+  }
+  }
 
 
 function mousePressed() {
@@ -128,8 +126,7 @@ function mousePressed() {
   }
 
   if (note) {
-    synth.triggerAttackRelease(note, "4n");
-    
+    synth.triggerAttackRelease(note, "4n"); 
     dance = true;
 
     if (danceTimer) {
