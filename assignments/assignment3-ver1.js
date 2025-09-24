@@ -7,6 +7,16 @@ const Yamount = 4;
 const Xamount = 18;
 const ellipseSize = 20;
 
+let synth;
+
+window.addEventListener("load", () => {
+  synth = new Tone.PolySynth().toDestination();
+});
+
+window.addEventListener("click", () => {
+  Tone.start();
+});
+
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
@@ -71,4 +81,32 @@ for (let i=0; i < Yamount; i++) {
 }
 y += Ysize + gap;
 }
+}
+
+function mousePressed() {
+
+  if (dist(mouseX, mouseY, width / 2 - 35, 110) < 12.5) {
+    synth.triggerAttackRelease("C4", "4n");
+  }
+
+   else if (dist(mouseX, mouseY, width / 2 - 35, 145) < 12.5) {
+    synth.triggerAttackRelease("F4", "4n");
+  }
+
+  else if (dist(mouseX, mouseY, width / 2, 145) < 12.5) {
+    synth.triggerAttackRelease("G4", "4n");
+  }
+
+  else if (dist(mouseX, mouseY, width / 2 + 35, 110) < 12.5) {
+    synth.triggerAttackRelease("E4", "4n");
+  }
+
+  else if (dist(mouseX, mouseY, width / 2 + 35, 145) < 12.5) {
+    synth.triggerAttackRelease("A4", "4n");
+  }
+
+  else if (dist(mouseX, mouseY, width / 2, 110) < 12.5) {
+    synth.triggerAttackRelease("D4", "4n");
+  }
+
 }
