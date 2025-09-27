@@ -9,7 +9,7 @@ let synth;
 let lastNote = null;
 
 window.addEventListener("load", () => {
-  synth = new Tone.MonoSynth().toDestination();
+synth = new Tone.AMSynth().toDestination();
 });
 
 window.addEventListener("click", () => {
@@ -32,10 +32,12 @@ function drawLines() {
 }
 
 function playTones() {
-    const musicZone = height / 7;
+    const musicZone = height / 8;
     const currentMusicZone = Math.floor(mouseY / musicZone);
 
-    const notes = ["C5", "A4", "G4", "F4", "D4", "C4", "E4"];
+     console.log("Zone:", currentMusicZone, "MouseY:", mouseY, "Height:", height);
+
+    const notes = ["C4", "Eb4", "F4", "Gb4", "G4", "Bb4", "C5", "Eb5"];
     const currentNote = notes[Math.min(currentMusicZone, notes.length - 1)];
 
     if (currentNote !== lastNote) {
