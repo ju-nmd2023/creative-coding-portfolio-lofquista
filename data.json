@@ -58,7 +58,7 @@
 
    {
     "file": "assignments/assignment3-ver2.js",
-    "name": "Week 4: Music at the club",
-    "description": "This piece is a continuation of Squares of scribbles 3.0, but with added interaction and Tone.js. By pressing the buttons on the DJ table, the music starts playing and the people start dancing."
+    "name": "Week 4: Music for doves",
+    "description": "This piece is a continuation of Simple rays, but with added interaction and Tone.js. By clicking and then listening to the sound of the blues scale, new unexpected artworks can be created when following another sense than the sight."
   }
 ]
