@@ -32,13 +32,14 @@ function drawLines() {
 }
 
 function playTones() {
-    const musicZone = height / 8;
-    const currentMusicZone = Math.floor(mouseY / musicZone);
+    const musicZone = height / 9;
+    let currentMusicZone = Math.floor(mouseY / musicZone);
 
      console.log("Zone:", currentMusicZone, "MouseY:", mouseY, "Height:", height);
 
     const notes = ["C4", "Eb4", "F4", "Gb4", "G4", "Bb4", "C5", "Eb5"];
     const currentNote = notes[Math.min(currentMusicZone, notes.length - 1)];
+
 
     if (currentNote !== lastNote) {
 
