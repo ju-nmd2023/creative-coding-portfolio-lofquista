@@ -5,20 +5,48 @@ let position;
 let velocity;
 let acceleration;
 let startLines = false;
+let synth;
+let lastNote = null;
+
+window.addEventListener("load", () => {
+  synth = new Tone.MonoSynth().toDestination();
+});
+
+window.addEventListener("click", () => {
+  Tone.start();
+});
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
-        background(0);
-frameRate(30);
+    background(0);
+    frameRate(30);
 }
 
 
 function drawLines() {
-       push();
+    push();
     stroke(255, 255, 255);
     strokeWeight(1);
-line(startPoint.x, startPoint.y, position.x, position.y);
-pop();
+    line(startPoint.x, startPoint.y, position.x, position.y);
+    pop();
+}
+
+function playTones() {
+    const musicZone = height / 7;
+    const currentMusicZone = Math.floor(mouseY / musicZone);
+
+    const notes = ["C5", "A4", "G4", "F4", "D4", "C4", "E4"];
+    const currentNote = notes[Math.min(currentMusicZone, notes.length - 1)];
+
+    if (currentNote !== lastNote) {
+
+        if (lastNote !== null) {
+            synth.triggerRelease();
+        }
+
+        synth.triggerAttack(currentNote);
+        lastNote = currentNote;
+    }
 }
 
 
@@ -34,6 +62,8 @@ if (startLines) {
     velocity.add(acceleration);
     velocity.limit(10);
         position.add(velocity);
+
+        playTones();
 }
 }
 
@@ -43,4 +73,11 @@ function mouseClicked() {
     startPoint = createVector(mouseX, mouseY);
     position = createVector(mouseX, mouseY);
     velocity = createVector(5, 8);
+
+    lastNote = null;
+
+    if (!startLines) {
+        synth.triggerRelease();
+    }
+    
 }
