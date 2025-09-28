@@ -3,7 +3,6 @@ const gap = 5;
 const Yamount = 19;
 const Xamount = 14;
 
-
 function setup() {
     createCanvas(innerWidth, innerHeight);
 }
