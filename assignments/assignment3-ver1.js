@@ -1,140 +1,82 @@
-// Plan: When clicking on buttons on dj table, the dancing humans from assignment 1 week 3 are moving (daning)
-
-const Xsize = 20;
-const Ysize = 80;
-const gap = 15;
-const Yamount = 4;
-const Xamount = 18;
-const ellipseSize = 20;
-
+let startPoint;
+let position;
+let velocity;
+let acceleration;
+let startLines = false;
 let synth;
-
-let dance = false;
-let danceTimer = 0;
+let lastNote = null;
 
 window.addEventListener("load", () => {
-  synth = new Tone.PolySynth().toDestination();
+synth = new Tone.AMSynth().toDestination();
 });
 
 window.addEventListener("click", () => {
   Tone.start();
 });
 
-
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    frameRate(3);
+    background(0);
+    // frameRate(30);
 }
 
-function drawDanceFloor() {
-noStroke();
-  noFill();
 
-  if (dance) {
+function drawLines() {
+    push();
+    stroke(255, 255, 255);
+    strokeWeight(1);
+    line(startPoint.x, startPoint.y, position.x, position.y);
+    pop();
+}
 
-    let y = (height - Ysize * Yamount - gap * (Yamount - 1)) / 2;
-    for (let i=0; i < Yamount; i++) {
-      let x = (width - Xsize * Xamount - gap * (Xamount - 1)) / 2;
-      
-      for (let k=0; k < Xamount; k++) {
-        push();
-        translate(x, y);
-        
-        stroke(74, 125, 65);
-        strokeWeight(1);
-        ellipse(10, 0, ellipseSize);
-        
-        beginShape();
+function playTones() {
+    const musicZone = height / 9;
+    let currentMusicZone = Math.floor(mouseY / musicZone);
 
-        for (let s = 0; s < 12; s++) {
-          if (dance) {
-            vertex(random(0, Xsize), random(0, Ysize));
-          } else {
-            vertex(Xsize / 2, Ysize / 2); 
-          }   
+    const notes = ["C4", "Eb4", "F4", "Gb4", "G4", "Bb4", "C5", "Eb5"];
+    const currentNote = notes[Math.min(currentMusicZone, notes.length - 1)];
+
+
+    if (currentNote !== lastNote) {
+
+        if (lastNote !== null) {
+            synth.triggerRelease();
         }
-        endShape();
-        
-        pop(); 
-        
-        x += Xsize + gap;
-      }
-      y += Ysize + gap;
+
+        synth.triggerAttack(currentNote);
+        lastNote = currentNote;
     }
-  }
 }
+
 
 function draw() {
-  background(255);
+if (startLines) {
+    drawLines();
+    
+    const mouse = createVector(mouseX, mouseY);
+    acceleration = p5.Vector.sub(mouse, position);
+    acceleration.normalize();
+    acceleration.mult(0.5);
+    
+    velocity.add(acceleration);
+    velocity.limit(10);
+        position.add(velocity);
 
-  // DJ table
-  push();
-  fill(0);
-  rect(width / 2 - 75, 85, 150, 85);
-  pop();
+        playTones();
+}
+}
 
-  push();
-  fill(255, 20, 147);
-  ellipse(width / 2 - 35, 110, 25, 25);
+function mouseClicked() {
+    startLines = !startLines;
 
-  fill(0, 255, 255);
-  ellipse(width / 2 - 35, 145, 25, 25);
+    startPoint = createVector(mouseX, mouseY);
+    position = createVector(mouseX, mouseY);
+    velocity = createVector(5, 8);
 
-  fill(255, 215, 0);
-  ellipse(width / 2, 145, 25, 25);
+    lastNote = null;
 
-  fill(138, 43, 226);
-  ellipse(width / 2 + 35, 110, 25, 25);
-
-  fill(50, 205, 50);
-  ellipse(width / 2 + 35, 145, 25, 25);
-
-  fill(255, 69, 0);
-  ellipse(width / 2, 110, 25, 25);
-  pop();
-
-  if (dance) {
-    drawDanceFloor();
-  } else {
-    textSize(20);
-    text("Play music to start a dance floor", width / 2, height / 2);
-    textAlign(CENTER);
-  }
-  }
-
-
-function mousePressed() {
-  let note = null;
-
-  if (dist(mouseX, mouseY, width / 2 - 35, 110) < 12.5) {
-    note = "C4";
-  } 
-  else if (dist(mouseX, mouseY, width / 2 - 35, 145) < 12.5) {
-    note = "F4";
-  }
-  else if (dist(mouseX, mouseY, width / 2, 145) < 12.5) {
-    note = "G4"; 
-  }
-  else if (dist(mouseX, mouseY, width / 2 + 35, 110) < 12.5) {
-    note = "E4";
-  }
-  else if (dist(mouseX, mouseY, width / 2 + 35, 145) < 12.5) {
-    note = "A4";
-  }
-  else if (dist(mouseX, mouseY, width / 2, 110) < 12.5) {
-    note = "D4";
-  }
-
-  if (note) {
-    synth.triggerAttackRelease(note, "4n"); 
-    dance = true;
-
-    if (danceTimer) {
-      clearTimeout(danceTimer);
+    if (!startLines) {
+        synth.triggerRelease();
     }
-
-    danceTimer = setTimeout(() => {
-      dance = false;
-    }, 1000);
-  }
+    
 }
