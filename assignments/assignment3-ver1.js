@@ -17,9 +17,7 @@ window.addEventListener("click", () => {
 function setup() {
     createCanvas(innerWidth, innerHeight);
     background(0);
-    // frameRate(30);
 }
-
 
 function drawLines() {
     push();

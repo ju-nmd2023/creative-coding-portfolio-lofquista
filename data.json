@@ -47,18 +47,18 @@
   {
     "file": "assignments/assignment2-ver2.js",
     "name": "Week 2-3 (bonus): Simple rays",
-    "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was learnt in class by Bassima."
+    "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was taught in a lecture by Bassima."
   },
 
   {
     "file": "assignments/assignment3-ver1.js",
     "name": "Week 4: Rays of music",
-    "description": "This piece is a continuation of Simple rays, but with added interaction and Tone.js. By clicking and then listening to the sound of the blues scale, new unexpected artworks can be created when following another sense than the sight."
+    "description": "This piece is a continuation of Simple rays, but with added interaction and Tone.js that was taught in the lecture on sound by Bassima. By clicking and then listening to the sound of the blues scale, new unexpected artworks can be created when following another sense than the sight."
   },
 
    {
     "file": "assignments/assignment3-ver2.js",
     "name": "Week 4: Music at the club",
-    "description": "This piece is a continuation of Squares of scribbles 3.0, but with added interaction and Tone.js. By pressing the buttons on the DJ table, the music starts playing and the people start dancing."
+    "description": "This piece is a continuation of Squares of scribbles 3.0, but with added interaction and Tone.js that was taught in the lecture on sound by Bassima. By pressing the buttons on the DJ table, the music starts playing and the people start dancing."
   }
 ]
