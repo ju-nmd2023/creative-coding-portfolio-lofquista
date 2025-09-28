@@ -1,63 +1,63 @@
 [
   {
-    "file": "assignments/assignment1-ver1.js",
+    "file": "experiments/assignment1-ver1.js",
     "name": "Week 1: Squares of scribbles",
     "description": "An attempt to somewhat recreate an artwork made by Georg Nees where there is a grid of squares, and within each square there are random points with a line between them."
   },
   {
-    "file": "assignments/assignment1-ver1.2.js",
+    "file": "experiments/assignment1-ver1.2.js",
     "name": "Week 1: Squares of scribbles 2.0",
     "description": "A version of my recreation of an artwork made by Georg Nees. This time in a more punky version with bright colors, harsch lines, and movement."
   },
   {
-    "file": "assignments/assignment1-ver1.3.js",
+    "file": "experiments/assignment1-ver1.3.js",
     "name": "Week 1: Squares of scribbles 3.0",
     "description": "A version of my recreation of an artwork made by Georg Nees. I changed some values and the color, and I also took some creative freedom to make it look like abstract little humans dancing."
   },
 
   {
-    "file": "assignments/assignment1-ver2.js",
+    "file": "experiments/assignment1-ver2.js",
     "name": "Week 1: A whirl of colors",
     "description": "An interpretation of an artwork made by Marius Watz. Made while trying to learn how to use arcs and randomness within loops."
   },
   {
-    "file": "assignments/assignment1-ver2.2.js",
+    "file": "experiments/assignment1-ver2.2.js",
     "name": "Week 1: A whirl of colors 2.0",
     "description": "A version of my interpretation of an artwork made by Marius Watz. This time I played around even more with the randomness and the colors to give it a different feel even though the base is the same."
   },
 
   {
-    "file": "assignments/assignment2-ver1.js",
+    "file": "experiments/assignment2-ver1.js",
     "name": "Week 2-3: Follow the paper airplanes",
     "description": "An interactive interpretation of an artwork made by Marius Watz. By combining particles and randomness, we get this chaotic flight of colorful paper airplanes that is like a simplification of an explosion."
   },
 
   {
-    "file": "assignments/assignment2-ver1.2.js",
+    "file": "experiments/assignment2-ver1.2.js",
     "name": "Week 2-3: Follow the paper airplanes 2.0",
     "description": "Another version of my interpretation of an artwork made by Marius Watz. This time I added some flow field function to the particles and randomness, creating more of a confetti simulation."
   },
 
   {
-    "file": "assignments/assignment2-ver1.3.js",
+    "file": "experiments/assignment2-ver1.3.js",
     "name": "Week 2-3: Follow the paper airplanes 3.0",
     "description": "A third version of my interpretation of an artwork made by Marius Watz, but now the paper airplanes have exploded or turned into UFOs. By working with particles and changed conditions when they hit the walls, a completely different artwork is made, even though the code is very similar."
   },
 
   {
-    "file": "assignments/assignment2-ver2.js",
+    "file": "experiments/assignment2-ver2.js",
     "name": "Week 2-3 (bonus): Simple rays",
     "description": "An interactive interpretation of an artwork made by Frieder Nake. By clicking the screen you can create simple rays over a black canvas. To create this, I used some code on acceleration and velocity that was taught in a lecture by Bassima."
   },
 
   {
-    "file": "assignments/assignment3-ver1.js",
+    "file": "experiments/assignment3-ver1.js",
     "name": "Week 4: Rays of music",
     "description": "This piece is a continuation of Simple rays, but with added interaction and Tone.js that was taught in the lecture on sound by Bassima. By clicking and then listening to the sound of the blues scale, new unexpected artworks can be created when following another sense than the sight."
   },
 
    {
-    "file": "assignments/assignment3-ver2.js",
+    "file": "experiments/assignment3-ver2.js",
     "name": "Week 4: Music at the club",
     "description": "This piece is a continuation of Squares of scribbles 3.0, but with added interaction and Tone.js that was taught in the lecture on sound by Bassima. By pressing the buttons on the DJ table, the music starts playing and the people start dancing."
   }
