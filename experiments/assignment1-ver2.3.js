@@ -13,7 +13,7 @@ function draw() {
   for (let i = 0; i < totalArcs; i++) {
     noStroke();
 
-    // The next two lines are retrieved from ChatGPT
+    // The next two lines are retrieved from ChatGPT https://chatgpt.com/share/68b8728a-8948-8002-953f-2e164ed9e63d and https://chatgpt.com/share/68b88335-49e8-8002-9218-8d4ef47d2c53
     let y = height / 2 + (i - totalArcs/2) * gap + random(-50, 100); 
     let arcWidth = 100 - Math.abs(i - totalArcs/2) / (totalArcs/2) * 550 + random(-50, 20);
     

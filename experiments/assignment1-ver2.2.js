@@ -6,7 +6,6 @@ function setup() {
 const totalArcs = 12;
 const gap = 25;
 
-
 function draw() {
     noFill();
 
