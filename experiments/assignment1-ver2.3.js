@@ -1,7 +1,7 @@
 function setup() {
     createCanvas(innerWidth, innerHeight);
     background(255);
-    frameRate(5);
+    frameRate(1);
 }
 
 const totalArcs = 20;
@@ -19,7 +19,7 @@ function draw() {
     
     push();
     translate(width/2, y);
-    rotate(frameCount * 0.5);
+    rotate(frameCount * 0.1);
     translate(-width/2, -y);
     
     arc(width/2, y, arcWidth, 20, 5, PI + HALF_PI);
